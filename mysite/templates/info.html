@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+        <h1 class="heading">The Project</h1>
+        <p class="description">This page will display background and information about the project</p>
+{% endblock content %}
+{% block content2 %}
+<!-- <div class="top">
+    <div class="inner_top">
+        <div class="top_logo">
+            <h1>CSS 497: Capstone</h1>
+        </div>
+    </div>
+</div> -->
+<div class="center">
+    <h1>What is This Project?</h1>
+    <p>During a pandemic which causes the whole world to fall in a state of lockdown, there may be little opportunity to try something new or to investigate new opportunities to give you joy. Market research companies charge high rates to collect and market products based on your user information. The application I’ve developed is simple to use, requires no user registration, doesn’t collect any information, and is free of charge. My application utilizes general information available on social media platforms and is shaped into a form of rules used to predict a customers interest via the Apriori algorithm. This algorithm predicts user interest based on a statistical model of what a user has already selected. By garnering a relevant dataset from recent user profiles, I’m able to construct an accurate model to predict a customer's next interest that is available to the general public. The web application I’ve developed encapsulates all these characteristics in a hassle free experience to investigate to serve your interests in mind both privately and generally.</p>
+    <h1>How does it work?</h1>
+    <h2>The Data</h2>
+    <p>I started by scraping my data from social media platforms and seeing what interests users like from many different groups so as to not be biased. After gathering over 3 thousand points of user data, I made sure to protect the confidentiality of these users by masking their ID’s with an arbitrary index. APIs like Google, Yelp, OSM, and Nominatim help identify what kind of locations these places are by generalizing them into clear and concise categories. This saved a lot of time for me as I didn’t need to classify each location by hand.</p>
+    <img src="https://cdn.discordapp.com/attachments/197566518282813443/818992049910317076/data1.png" alt="data1">
+    <p>With the help of API’s like Yelp/Google, we can simplify this user’s interest to something as:</p>
+    <img src="https://lh6.googleusercontent.com/oopFk9i0nzKK16gIE6S4clzY0byberUv8kcwqP4nCL9DTjifXiV2swSm5PlBuiO1SaDJ_W4WyZOWltFcYccV4ro90pOWTQe1BX7LYHth8NrCTTvk5tugHW3KPWgXu0BxCTFPmya1" alt="data2">
+    <p>Some of the information is lost here by Yelp and Google if they fail to recognize a company name.</p>
+    <h3>The Algorithm</h3>
+    <p>The Apriori algorithm produces a model that predicts what a user likes based on frequent itemsets. I use this information to create clear and distinct links from the rule set given by the Apriori algorithm. The rule set looks like this: </p>
+    <img src="https://lh4.googleusercontent.com/xbPwT5Jn9UxI1OZqs2BLSuVHT-aYYKtKCSlqklPztEDvy_hTwEa6kTOg63yCBQUd9S9pyMWEn5sM1whu2s0H6vIJhwpjTKGb7K2mZHarFeaSiaXIjG1E0rp0grzyGoGKOleFI49d" alt="data3">
+    <p>Where we can filter by the support value, conviction, and lift of each rule to get a “well” predicted result. </p>
+    <h2>The Web Application</h3>
+    <p>To make it more accessible, a simple web application was created to showcase what kind of hobbies users might like. Combined with the Google geo-locate and Google place search, we can find areas of interest that match with specific hobbies to the user.</p>
+    <p>By dividing the hobbies into groups, I can predict a slightly diverse hobbyset for each user by ranking by support followed by having at least one hobby from each distinctive group.</p>
+    <h2>What Could be Done in the Future</h2>
+    <p>There’s still a lot more work to be done in refining the whole process.</p>
+    <p>A short comprehensive list:</p>
+    <div class="center">
+            <li>Refactoring a lot of the code</li>
+            <li>Account for edge cases when classifying hobbies</li>
+            <li>Be able to handle a lot more ambiguous hobbies that I’ve purposely filtered out as their support was too low</li>
+            <li>Design a better UI</li>
+    </div>
+</div>
+{% endblock content2 %}

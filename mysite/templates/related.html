@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1 class="heading">{{ selected }}</h1>
+    <p class="description">Here is some google info</p>
+{% endblock content %}
+{% block content2 %}
+<div class='center'>
+    {% for i in range(0, len) %}
+    <figure class='item2'>
+        <div class='center'>
+            <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="{{ data[i]['map_url'] }}"></iframe>
+            <p>Name: {{ data[i]['name'] }}</p>    
+            <p>Address: {{ data[i]['formatted_address'] }}</p>
+            {% if data[i]['price_level'] %}
+                <p>Price Level: {{ data[i]['price_level'] }}</p> 
+            {% endif %}
+            {% if data[i]['rating'] %}
+                <p>Rating: {{ data[i]['rating'] }}</p>   
+            {% endif %}
+        </div>
+    </figure>
+    {% endfor %}
+</div>
+{% endblock content2 %}

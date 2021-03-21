@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+        <h1 class="heading">Your Related Interests</h1>
+        <p class="description">Here are some other interests you may also like. Click on one of them to be directed to areas nearby related to them</p>
+{% endblock content %}
+{% block content2 %}
+<div class='center'>
+    {% for i in range(0, len) %}
+        {% for choice in choices %}
+            {% if choice.alt == interests[i][0] %}
+                <figure class='item'>
+                    <div class='center'>
+                        <img src= {{ choice.src }} alt= {{ choice.alt }} width="250" height="250">
+                        <figcaption class="caption"><h3><a href="{{url_for('related', type='' + interests[i][0])}}" target="_blank">{{ interests[i][0] }}</a></h3></figcaption>
+                        <p>Support value: {{ interests[i][1] }}</p>
+                        <p>{{ choice.desc }}</p>
+                    </div>
+                </figure>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock content2 %}
+
+<!-- <h3><a href="{{url_for('related', type='' + interests[i])}}" target="_blank">{{ interests[i] }}</a></h3> -->
+
