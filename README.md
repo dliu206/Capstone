@@ -22,19 +22,16 @@ During a pandemic which causes the whole world to fall in a state of lockdown, t
 
 #### Web Scraping
 ![image](Web_Scraping_Diagram.jpg)
-Using Selenium and BeautifulSoup, we can automate a script to inject credentials into sites like Facebook and find a collection of users to scrape from.
-For my own purposes, I've scraped only the user-id and a users interests before storing it into a Pickle file to be used later for classification. 
-This program can be editted to scrape more than just a users interests.
+Using Selenium and BeautifulSoup, we can automate a script to inject credentials into sites like Facebook and find a collection of users to scrape from. For my own purposes, I've scraped only the user-id and a user's interests before storing it into a Pickle file to be used later for classification. This program can be edited to scrape more than just a user's interests.
 
 ### Classification
 ![image](Classification_Diagram.jpg)
-Using API's like OSM/Nominatim and Yelp, they handle the classification for us. By sending a hobby name, we can the map feature and see what Yelp classifies it as.
-Afterwards we just need to filter it down to what fixes our problem description by deleting unwanted data.
+Using API's like OSM/Nominatim and Yelp, they handle the classification for us. By sending a hobby name, we can map the feature and see what Yelp classifies it as. Afterwards we just need to filter it down to what fixes our problem description by deleting unwanted data.
 
 ### Apriori Algorithm
 The Apriori Algorithm shows the most frequent datasets using support, confidence, and lift. Mlxtend has already implemented this function and stored it using the Pandas dataframe.
 
-### Predicting the Algorithm
+### The Prediction Algorithm
 We can use the rule set created by Apriori to generate links between hobbies that users might be interested in.
 
 ### The Website
